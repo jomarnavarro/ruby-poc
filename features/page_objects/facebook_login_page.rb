@@ -1,0 +1,3 @@
+class FacebookLoginPage < PageObject
+
+end
