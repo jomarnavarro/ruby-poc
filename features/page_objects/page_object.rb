@@ -17,5 +17,4 @@ class PageObject
 		raise("Definition not found for #{name}") unless locator
 		@driver.find_element(locator)
 	end	
-
-end`
+end

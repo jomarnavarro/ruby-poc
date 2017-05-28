@@ -6,6 +6,7 @@ Given(/^User is on (.*)$/) do |page|
   		ensure_page FacebookHomePage
   when 'Facebook Search Results Page'
   		ensure_page FacebookSearchResultsPage
+  end
 end
 
 When(/^User clicks on (.*)$/) do |lnk_btn|
@@ -17,5 +18,5 @@ When(/^User inputs (.*) and (.*)$/) do |user, password|
 end
 	
 Then(/^User is on (.)$/) do |page|
-  puts "User is on #{page}"#pending # Write code here that turns the phrase above into concrete actions
+  puts "User is on #{page}"
 end

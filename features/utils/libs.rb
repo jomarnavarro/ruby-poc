@@ -21,5 +21,6 @@ module Libs
 	def present?(element_name)
 		element = get(element_name)
 		raise("Element #{element_name} not found") unless element
-		element ? element.displayed? : false+++
+		element ? element.displayed? : false
+	end
 end

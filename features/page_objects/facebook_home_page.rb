@@ -1,5 +1,5 @@
 require_relative './page_object'
-class FacebookLoginPage < PageObject
+class FacebookHomePage < PageObject
 
     define :email_txt, id: 'email'
     define :pass_txt, id: 'pass'

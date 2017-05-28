@@ -4,11 +4,11 @@ def ensure_page(page_object_class)
 end
 
 Before do |scenario|
-	@config = YAML.load_file('./features/support.props.conf')
+	@config = YAML.load_file('./features/support/props.conf')
 	@driver = Selenium::WebDriver.for @config['browser']
 	@driver.navigate.to @config['url']
 
-	ensure_page(KueskiHomePage)	
+	ensure_page(FacebookLoginPage)	
 end	
 
 After do |scenario|
