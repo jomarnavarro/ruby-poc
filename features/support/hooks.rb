@@ -5,7 +5,10 @@ end
 
 Before do |scenario|
 	@config = YAML.load_file('./features/support/props.conf')
-	@driver = Selenium::WebDriver.for @config['browser']
+	@prefs = {credentials_enable_service: false}
+	caps = Selenium::WebDriver::Remote::Capabilities.chrome("chromeOptions" => {"args" => [ "--disable-notifications" ]})
+
+	@driver = Selenium::WebDriver.for @config['browser'], prefs: @prefs, desired_capabilities: caps
 	@driver.navigate.to @config['url']
 
 	ensure_page(FacebookLoginPage)	
@@ -13,4 +16,4 @@ end
 
 After do |scenario|
 	@driver.quit
-end	
+end

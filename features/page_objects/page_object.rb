@@ -12,7 +12,10 @@ class PageObject
 	end
 
 	def get(name)
-		name = name.delete(' ').underscore
+		if( !name.is_a?( Symbol ) ) 
+			name = name.delete(' ').underscore
+		end
+		
 		locator = self.class.definitions[name.to_s]
 		raise("Definition not found for #{name}") unless locator
 		@driver.find_element(locator)
