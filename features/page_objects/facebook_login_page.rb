@@ -1,31 +1,22 @@
-require_relative './page_object'
-class FacebookLoginPage < PageObject
 
-    define :email_txt, id: 'email'
-    define :pass_txt, id: 'pass'
-    define :login_btn, id: 'loginbutton'
+class FacebookLoginPage
+    include PageObject
 
-    def initialize(driver)
-        @driver = driver
-    end
+    text_field(:email_txt, :id => 'email')
+    text_field(:pass_txt, :id => 'pass')
+    button(:login_btn, :xpath => '//*[@data-testid="royal_login_button"]')
 
     def login(user, pass)
-        input(user, :email_txt)
-        input(pass, :pass_txt)
-        click(:login_btn)
-        begin
-            driver.execute_script("window.confirm = function(msg) { return true; }")
-        rescue => exception
-            
-        end
-        
-
+        self.email_txt = user
+        self.pass_txt = pass
+        login_btn
     end
 
     def is_at?()
-        present?(:email_txt) &&
-        present?(:pass_txt) &&
-        present?(:login_btn)
+        [
+            email_txt_element,
+            pass_txt_element,
+            login_btn_element
+        ].all? { |elem| elem.present? }
     end
-
 end

@@ -1,23 +1,22 @@
-require_relative './page_object'
-class FacebookHomePage < PageObject
+##
+# Declares FacebookHomePage as a page object.
+class FacebookHomePage
+    include PageObject
 
-    define :facebook_logo, xpath: '//span[text() = "Facebook"]'
-    define :search_txt, name: 'q'
-    define :search_btn, xpath: '//button[@data-testid="facebar_search_button"]'
-
-    def initialize(driver)
-        @driver = driver
-    end
+    text_field(:facebook_logo, :xpath => '//span[text() = "Facebook"]')
+    text_field(:search_txt, :name => 'q')
+    button(:search_btn, :xpath => '//button[@data-testid="facebar_search_button"]')
 
     def is_at?()
-        present?(:facebook_logo) &&
-        present?(:search_txt) #&& 
-        #present?(:search_btn)
+        [
+            facebook_logo_element,
+            facebook_logo_element
+        ].all? { |elem| elem.present?}   
     end
 
     def search_friend(friend_name)
-        input(friend_name, :search_txt)
-        click(:search_btn)
+        self.search_txt = friend_name
+        search_btn
     end
 
 end
