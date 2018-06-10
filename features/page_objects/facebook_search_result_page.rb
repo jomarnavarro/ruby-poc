@@ -14,6 +14,9 @@ class FacebookSearchResultsPage
   end
 
   def verify_friend(friend_info)
+    self.wait_until do
+      person_card?
+    end
     friend_card = person_card_element.siblings.find { |elem| elem.text.include?(friend_info.strip) }
     raise("Friend info #{friend_info} not found.") unless friend_card.check_visible
   end
