@@ -12,11 +12,11 @@ class FacebookLoginPage
     login_btn
   end
 
-  def is_at?()
+  def at?()
     [
-      email_txt_element,
-      pass_txt_element,
-      login_btn_element
-    ].all? { |elem| elem.present? }
+      email_txt?,
+      pass_txt?,
+      login_btn?
+    ].all?
   end
 end

@@ -9,7 +9,7 @@ class FacebookSearchResultsPage
   div(:persons_search_result, xpath: '//div[@id="BrowseResultsContainer"]//div[text() = "Teo Garcia"]')
   div(:friend_request_add_btn, xpath: './../following-sibling::div//button[contains(@class, "FriendRequestAdd")]')
 
-  def is_at?()
-    facebook_logo_element.present?
+  def at?()
+    facebook_logo?
   end
 end

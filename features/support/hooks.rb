@@ -1,7 +1,7 @@
 def ensure_page(page_object_class)
   return if @page.is_a?(page_object_class)
   @page = page_object_class.new(@driver)
-  assert @page.is_at?
+  assert @page.at?
 end
 
 Before do |scenario|
