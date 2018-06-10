@@ -8,8 +8,9 @@ Feature: Friend Search
     Given User is logged onto Facebook with <user> and <password>
     When User searches <friend_name>
     Then User is on Facebook Search Results Page
+    Then User finds friend with <text>
 
     Examples:
 
-      | user                | password  | friend_name |
-      | onavarro@kueski.com | Test@1234 | Teo Garcia  |
+      | user                | password  | friend_name | text |
+      | onavarro@kueski.com | Test@1234 | Monica Galindo  |Guadalajara|
