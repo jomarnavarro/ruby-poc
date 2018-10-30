@@ -6,11 +6,9 @@ end
 
 Before do |scenario|
   @config = YAML.load_file('./features/support/props.conf')
-  options = Selenium::WebDriver::Chrome::Options.new
-  options.add_argument('--disable-notifications')
-  @driver = Selenium::WebDriver.for @config['browser'], options: options
-  @driver.navigate.to @config['url']
-  ensure_page(FacebookLoginPage)
+  @driver = Watir::Browser.new @config['browser']
+  @driver.goto @config['url']
+  ensure_page(GoogleHomePage)
 end
 
 After do |scenario|

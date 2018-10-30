@@ -1,16 +1,12 @@
 Given(/^User is on (.*)$/) do |page|
   case page
-  when 'Facebook Login Page'
-    ensure_page FacebookLoginPage
-  when 'Facebook Home Page'
-    ensure_page FacebookHomePage
-  when 'Facebook Search Results Page'
-    ensure_page FacebookSearchResultsPage
+  when 'Google Home Page'
+    ensure_page GoogleHomePage
+  when 'Google Results Page'
+    ensure_page GoogleResultsPage
+  when 'InAllMedia Home Page'
+    ensure_page InAllMediaHomePage
   end
-end
-
-When(/^User clicks on (.*)$/) do |lnk_btn|
-  puts "User clicks on #{lnk_btn}"
 end
 
 Then(/^User is on (.)$/) do |page|
