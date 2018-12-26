@@ -4,14 +4,11 @@ class GoogleHomePage
   include PageObject
 
   text_field(:search_txt, :name => 'q')
-  button(:search_btn, :xpath => '//input[@class = "lsb"]')
+  button(:search_btn, :name => 'btnK')
   unordered_list(:search_options, :xpath => '//ul[@role="listbox"]')
 
   def at?()
-    [
-      search_txt_element.present?,
-      search_btn_element.present?
-    ].all?
+    search_txt_element.present?
   end
 
   def search_keyword(keyword)
