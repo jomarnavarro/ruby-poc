@@ -1,12 +1,5 @@
 Given(/^User is on (.*)$/) do |page|
-  case page
-  when 'Facebook Login Page'
-  		ensure_page FacebookLoginPage
-  when 'Facebook Home Page'
-  		ensure_page FacebookHomePage
-  when 'Facebook Search Results Page'
-  		ensure_page FacebookSearchResultsPage
-  end
+  ensure_page Object.const_get page.split(' ').join
 end
 
 When(/^User clicks on (.*)$/) do |lnk_btn|
