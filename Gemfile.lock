@@ -55,8 +55,6 @@ GEM
       thread_safe (~> 0.1)
     watir (6.14.0)
       selenium-webdriver (~> 3.4, >= 3.4.1)
-    watir-webdriver (0.9.9)
-      selenium-webdriver (>= 2.46.2)
     yml_reader (0.7)
 
 PLATFORMS
@@ -66,7 +64,7 @@ DEPENDENCIES
   activesupport
   cucumber
   page-object
-  watir-webdriver
+  selenium-webdriver
 
 BUNDLED WITH
-   1.16.6
+   2.0.1

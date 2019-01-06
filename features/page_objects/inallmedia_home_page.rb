@@ -3,7 +3,7 @@
 class InAllMediaHomePage
   include PageObject
 
-  img(:iam_logo, :xpath => '//img[contains(@src, "inallmedia.com")]')
+  img(:iam_logo, :id => 'logo')
 
   def at?()
     [

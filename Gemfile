@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'watir-webdriver'
+gem 'selenium-webdriver'
 gem 'activesupport'
 gem 'page-object'
 gem 'cucumber'
